@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turó Legal — Abogados para empresas y proyectos empresariales</title>
+<meta name="description" content="Acompañamos a empresas, empresarios y personas a tomar decisiones con seguridad jurídica. Estructuración, contratos, compliance, proyectos mineros y ambientales, y resolución de conflictos. Medellín y Bogotá.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,15 85,78 15,78' fill='none' stroke='%231c232e' stroke-width='7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,480;0,9..144,560;1,9..144,420&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --bg-alt:#f2f1ed;
+    --ink:#1c232e;
+    --ink-soft:#3c4759;
+    --slate:#4b5a70;
+    --slate-light:#8b96a6;
+    --line:#d8d6d0;
+    --paper:#f2f1ed;
+    --max:1140px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:560;
+    line-height:1.12;
+    margin:0;
+    color:var(--ink);
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
+  .label{
+    font-size:0.78rem;
+    letter-spacing:0.06em;
+    color:var(--slate);
+    font-weight:600;
+  }
+  .hairline{border-top:1px solid var(--line);}
+  section{padding:96px 0;}
+  @media (max-width:720px){
+    section{padding:64px 0;}
+    .wrap{padding:0 22px;}
+    body{font-size:16px;}
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:40;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  header .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+  }
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+  .brand svg{width:26px; height:26px; flex:none;}
+  .brand span{
+    font-family:'Fraunces',serif;
+    font-size:1.28rem;
+    font-weight:560;
+    color:var(--ink);
+  }
+  .brand span b{font-weight:560;}
+  .brand span i{font-style:normal; font-weight:400; color:var(--slate);}
+  nav{display:flex; align-items:center; gap:30px;}
+  nav ul{list-style:none; display:flex; gap:26px; margin:0; padding:0;}
+  nav a{
+    text-decoration:none; color:var(--ink-soft); font-size:0.94rem; font-weight:500;
+    padding-bottom:3px; border-bottom:1px solid transparent;
+    transition:border-color .18s ease, color .18s ease;
+  }
+  nav a:hover, nav a:focus-visible{color:var(--ink); border-color:var(--ink);}
+  .btn{
+    display:inline-block;
+    font-family:'Manrope',sans-serif;
+    font-weight:600;
+    font-size:0.92rem;
+    text-decoration:none;
+    padding:11px 22px;
+    border-radius:2px;
+    transition:background .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .btn-primary{background:var(--ink); color:#fff; border:1px solid var(--ink);}
+  .btn-primary:hover{background:var(--slate); border-color:var(--slate);}
+  .btn-ghost{background:transparent; color:var(--ink); border:1px solid var(--line);}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .navtoggle{display:none;}
+  @media (max-width:900px){
+    nav ul{display:none;}
+    .navtoggle{display:inline-block;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    padding:110px 0 90px;
+    overflow:hidden;
+  }
+  .hero .wrap{position:relative; z-index:2;}
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:40px; align-items:end;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 4.4vw, 3.7rem);
+    max-width:11ch;
+  }
+  .hero .lede{
+    margin-top:26px;
+    max-width:46ch;
+    font-size:1.08rem;
+    color:var(--ink-soft);
+  }
+  .hero .ctas{margin-top:38px; display:flex; gap:14px; flex-wrap:wrap;}
+  .peaks{
+    position:absolute; right:-4%; bottom:0; width:56%; max-width:640px;
+    opacity:0.9;
+  }
+  .peaks path{
+    fill:none; stroke-linejoin:round; stroke-linecap:round;
+  }
+  .peaks .p1{stroke:var(--slate-light); stroke-width:2;}
+  .peaks .p2{stroke:var(--slate); stroke-width:2;}
+  .peaks .p3{stroke:var(--ink); stroke-width:2.2;}
+  .draw path{
+    stroke-dasharray:1400;
+    stroke-dashoffset:1400;
+    animation:draw 2.4s ease forwards;
+  }
+  .draw .p2{animation-delay:.15s;}
+  .draw .p3{animation-delay:.3s;}
+  @keyframes draw{ to{stroke-dashoffset:0;} }
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .peaks{position:static; width:100%; max-width:100%; margin-top:40px; opacity:0.85;}
+    .hero{padding-top:64px;}
+  }
+
+  /* ---------- Esencia / Porqué ---------- */
+  .duo{
+    display:grid; grid-template-columns:1fr 1fr; gap:64px;
+  }
+  .duo h2{font-size:1.6rem; margin-bottom:16px; max-width:16ch;}
+  .duo p{color:var(--ink-soft);}
+  @media (max-width:800px){
+    .duo{grid-template-columns:1fr; gap:44px;}
+  }
+
+  /* ---------- Qué hacemos (home summary) ---------- */
+  .lead-block{max-width:56ch; margin-bottom:52px;}
+  .lead-block h2{font-size:clamp(1.7rem,2.6vw,2.2rem);}
+  .lead-block .label{display:block; margin-bottom:10px;}
+
+  .service-row{
+    display:grid; grid-template-columns:1fr 1.4fr; gap:40px;
+    padding:26px 0;
+    border-top:1px solid var(--line);
+  }
+  .service-row:last-child{border-bottom:1px solid var(--line);}
+  .service-row h3{font-size:1.18rem; font-weight:560;}
+  .service-row p{color:var(--ink-soft); font-size:0.98rem;}
+  @media (max-width:700px){
+    .service-row{grid-template-columns:1fr; gap:8px;}
+  }
+
+  /* ---------- Cómo trabajamos (steps / trail) ---------- */
+  .trail{position:relative; margin-top:10px;}
+  .trail::before{
+    content:"";
+    position:absolute; left:23px; top:14px; bottom:14px; width:1px;
+    background:var(--line);
+  }
+  .step{
+    position:relative;
+    display:grid; grid-template-columns:48px 1fr; gap:24px;
+    padding:26px 0;
+  }
+  .step .num{
+    font-family:'Fraunces',serif; font-style:italic; font-weight:420;
+    font-size:1.5rem; color:var(--slate);
+    background:var(--bg);
+    width:48px; text-align:center;
+  }
+  .step h3{font-size:1.12rem; margin-bottom:6px;}
+  .step p{color:var(--ink-soft); font-size:0.97rem; max-width:56ch;}
+  section.alt .step .num{background:var(--bg-alt);}
+
+  /* ---------- Para quién / cierre ---------- */
+  .cta-band{
+    background:var(--ink); color:#fff;
+    padding:70px 0;
+  }
+  .cta-band .wrap{
+    display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap;
+  }
+  .cta-band h2{color:#fff; font-size:clamp(1.5rem,2.6vw,2.1rem); max-width:20ch;}
+  .cta-band .btn-primary{background:#fff; color:var(--ink); border-color:#fff;}
+  .cta-band .btn-primary:hover{background:var(--slate-light); border-color:var(--slate-light); color:var(--ink);}
+
+  /* ---------- Nosotros ---------- */
+  .pull{
+    border-left:2px solid var(--ink);
+    padding-left:22px;
+    margin:30px 0;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1.25rem;
+    color:var(--ink);
+    max-width:40ch;
+  }
+  .diffs{list-style:none; margin:20px 0 0; padding:0; display:grid; gap:14px;}
+  .diffs li{
+    padding-left:20px; position:relative; color:var(--ink-soft); font-size:0.98rem;
+  }
+  .diffs li::before{
+    content:"—"; position:absolute; left:0; color:var(--slate-light);
+  }
+  .nos-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:70px;}
+  @media (max-width:800px){ .nos-grid{grid-template-columns:1fr; gap:40px;} }
+
+  /* ---------- Servicios ---------- */
+  .svc{
+    padding:44px 0;
+    border-top:1px solid var(--line);
+    display:grid; grid-template-columns:1fr 1fr; gap:50px;
+  }
+  .svc:last-of-type{border-bottom:1px solid var(--line);}
+  .svc-head .index{
+    font-family:'Fraunces',serif; font-style:italic; color:var(--slate-light);
+    font-size:1rem; margin-bottom:8px; display:block;
+  }
+  .svc-head h3{font-size:1.5rem;}
+  .svc-head .tag{
+    display:inline-block; margin-top:12px;
+    font-size:0.72rem; letter-spacing:0.09em; text-transform:uppercase;
+    color:var(--slate); border:1px solid var(--line); border-radius:2px;
+    padding:4px 9px;
+  }
+  .svc-head .desc{margin-top:16px; color:var(--ink-soft); max-width:38ch;}
+  .svc-list{list-style:none; margin:0; padding:0; column-count:2; column-gap:28px;}
+  .svc-list li{
+    font-size:0.93rem; color:var(--ink-soft);
+    padding:8px 0; border-top:1px solid var(--line);
+    break-inside:avoid;
+  }
+  @media (max-width:800px){
+    .svc{grid-template-columns:1fr; gap:20px;}
+    .svc-list{column-count:1;}
+  }
+
+  /* ---------- Sectores ---------- */
+  .sect-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .sect-card{background:var(--bg); padding:30px 26px;}
+  .sect-card h3{font-size:1.05rem; margin-bottom:10px;}
+  .sect-card p{font-size:0.93rem; color:var(--ink-soft);}
+  @media (max-width:860px){ .sect-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .sect-grid{grid-template-columns:1fr;} }
+
+  /* ---------- FAQ ---------- */
+  details{
+    border-top:1px solid var(--line);
+    padding:22px 0;
+  }
+  details:last-of-type{border-bottom:1px solid var(--line);}
+  summary{
+    cursor:pointer; list-style:none;
+    display:flex; align-items:center; justify-content:space-between; gap:20px;
+    font-family:'Fraunces',serif; font-size:1.12rem; font-weight:500;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary .plus{
+    font-family:'Manrope',sans-serif; font-weight:400; font-size:1.4rem; color:var(--slate);
+    transition:transform .2s ease; flex:none;
+  }
+  details[open] summary .plus{transform:rotate(45deg);}
+  details p{margin-top:14px; color:var(--ink-soft); max-width:62ch; font-size:0.98rem;}
+
+  /* ---------- Contacto ---------- */
+  .contact-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:60px;
+  }
+  .people{display:grid; gap:26px; margin-top:30px;}
+  .person{
+    border-top:1px solid var(--line);
+    padding-top:20px;
+    display:grid; grid-template-columns:52px 1fr; gap:16px; align-items:start;
+  }
+  .avatar{
+    width:52px; height:52px; border-radius:50%;
+    background:var(--bg-alt); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces',serif; color:var(--slate); font-size:1.05rem;
+  }
+  .person h3{font-size:1.08rem;}
+  .person .role{color:var(--slate); font-size:0.88rem; margin-top:2px;}
+  .person .chan{margin-top:10px; display:flex; flex-direction:column; gap:4px; font-size:0.92rem;}
+  .person .chan a{text-decoration:none; color:var(--ink-soft); border-bottom:1px solid var(--line);}
+  .person .chan a:hover{color:var(--ink); border-color:var(--ink);}
+
+  .contact-panel{
+    background:var(--bg-alt); padding:40px; border:1px solid var(--line);
+  }
+  .contact-panel h3{font-size:1.2rem; margin-bottom:14px;}
+  .contact-panel p{color:var(--ink-soft); margin-bottom:24px;}
+  .contact-panel .loc{display:flex; gap:26px; margin-top:24px; flex-wrap:wrap;}
+  .contact-panel .loc div{font-size:0.92rem;}
+  .contact-panel .loc .label{display:block; margin-bottom:4px;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--ink); color:var(--slate-light);
+    padding:56px 0 34px;
+  }
+  footer .wrap{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:30px; flex-wrap:wrap;
+  }
+  footer .brand span{color:#fff;}
+  footer .brand span i{color:var(--slate-light);}
+  footer .fcols{display:flex; gap:56px; flex-wrap:wrap;}
+  footer .fcol h4{
+    color:#fff; font-family:'Manrope',sans-serif; font-size:0.82rem; font-weight:600;
+    letter-spacing:0.04em; margin-bottom:12px;
+  }
+  footer .fcol a{
+    display:block; color:var(--slate-light); text-decoration:none; font-size:0.92rem;
+    margin-bottom:8px;
+  }
+  footer .fcol a:hover{color:#fff;}
+  .fbottom{
+    max-width:var(--max); margin:44px auto 0; padding:22px 32px 0;
+    border-top:1px solid #333d4c;
+    font-size:0.82rem; color:var(--slate-light);
+  }
+  @media (max-width:720px){
+    .fbottom{padding:22px 22px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#inicio">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <polygon points="50,14 86,80 14,80" fill="none" stroke="#8b96a6" stroke-width="6" stroke-linejoin="round"/>
+        <polygon points="50,14 86,80 62,80 62,58" fill="none" stroke="#1c232e" stroke-width="6" stroke-linejoin="round"/>
+      </svg>
+      <span><b>Turó</b> <i>Legal</i></span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#como-trabajamos">Cómo trabajamos</a></li>
+        <li><a href="#sectores">Sectores</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ul>
+      <a class="btn btn-primary" href="#contacto">Escríbanos</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1>Aseguramos cada paso hacia la cima.</h1>
+          <p class="lede">En Turó Legal acompañamos a empresas, empresarios y personas a tomar decisiones con seguridad jurídica, entendiendo primero el negocio y no solamente la norma.</p>
+          <div class="ctas">
+            <a class="btn btn-primary" href="#contacto">Agenda una conversación</a>
+            <a class="btn btn-ghost" href="#servicios">Conoce nuestros servicios</a>
+          </div>
+        </div>
+        <svg class="peaks draw" viewBox="0 0 420 260" aria-hidden="true">
+          <path class="p1" d="M0 230 L70 120 L120 175 L190 60 L260 190 L300 140 L340 200 L420 100"/>
+          <path class="p2" d="M0 245 L100 150 L150 195 L230 90 L290 210 L360 165 L420 195"/>
+          <path class="p3" d="M20 258 L110 175 L165 215 L245 120 L310 225 L420 150"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESENCIA + PORQUÉ -->
+  <section class="hairline">
+    <div class="wrap duo">
+      <div>
+        <h2>Entendemos el negocio antes que la norma</h2>
+        <p>No creemos en el derecho como un fin en sí mismo, sino como una herramienta para proteger, estructurar y hacer viables las decisiones empresariales. Por eso, antes de proponer una solución jurídica, entendemos su operación, su sector y hacia dónde quiere llegar.</p>
+      </div>
+      <div>
+        <h2>Turó significa montaña</h2>
+        <p>Todo proyecto empresarial es un ascenso: construir, crecer, invertir, heredar un negocio familiar, expandirse a un nuevo mercado. Y en ese ascenso, lo que casi siempre hace que un proyecto se devuelva a la base no es la falta de esfuerzo ni de visión, sino un problema jurídico que no se anticipó a tiempo. Aseguramos cada tramo del camino para que su ascenso no se detenga.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ HACEMOS (resumen) -->
+  <section class="hairline" style="background:var(--bg-alt);">
+    <div class="wrap">
+      <div class="lead-block">
+        <span class="label">Qué hacemos</span>
+        <h2>Cinco frentes, un mismo propósito: que su proyecto no se devuelva</h2>
+      </div>
+      <div>
+        <div class="service-row">
+          <h3>Estructuración Jurídica de Negocios</h3>
+          <p>Porque muchas empresas necesitan construir antes que defender.</p>
+        </div>
+        <div class="service-row">
+          <h3>Contratos y Relaciones Comerciales</h3>
+          <p>Relaciones comerciales seguras, desde la negociación hasta la firma.</p>
+        </div>
+        <div class="service-row">
+          <h3>Cumplimiento y Gestión del Riesgo</h3>
+          <p>Crecer con seguridad, no solo con velocidad.</p>
+        </div>
+        <div class="service-row">
+          <h3>Proyectos Empresariales e Industriales</h3>
+          <p>Del papel a la operación, en sectores complejos y regulados.</p>
+        </div>
+        <div class="service-row">
+          <h3>Resolución Estratégica de Conflictos</h3>
+          <p>No solo litigio: estrategia para resolver antes de escalar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIÉN -->
+  <section class="hairline">
+    <div class="wrap duo">
+      <div>
+        <h2>Trabajamos mejor con quienes construyen para quedarse</h2>
+        <p>Empresas en crecimiento, empresas familiares, inversionistas, emprendedores de alto impacto y organizaciones de industrias reguladas que valoran la prevención jurídica tanto como el resultado del negocio.</p>
+      </div>
+      <div>
+        <h2>¿Qué tipo de cliente no encaja con Turó?</h2>
+        <p>Somos honestos al respecto: no somos la firma indicada para quien busca la opción más económica sin valorar la prevención, o para quien espera una respuesta genérica sin compartir el contexto real de su operación.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="wrap">
+      <h2>¿Listo para asegurar el siguiente tramo de su ascenso?</h2>
+      <a class="btn btn-primary" href="#contacto">Escríbanos y conversemos sobre su proyecto</a>
+    </div>
+  </div>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="hairline">
+    <div class="wrap nos-grid">
+      <div>
+        <span class="label">Nosotros</span>
+        <h2 style="font-size:clamp(1.8rem,2.8vw,2.3rem); margin-top:10px; max-width:18ch;">La montaña que le da nombre a Turó</h2>
+        <p style="margin-top:20px; color:var(--ink-soft);">Elegimos este nombre porque ninguna otra imagen representa mejor lo que significa construir una empresa, sacar adelante un proyecto personal o sostener un negocio familiar a lo largo del tiempo: un ascenso que exige esfuerzo, visión y, sobre todo, cuidar cada paso.</p>
+
+        <p style="margin-top:20px; color:var(--ink-soft);">Sísifo fue condenado a empujar una roca hasta la cima de una montaña, para verla rodar de nuevo hasta la base justo antes de llegar, y repetir el esfuerzo para siempre. Es una imagen que muchos empresarios reconocen sin conocer el mito: se avanza, se está cerca de la meta —una inversión, una expansión, un relevo generacional, la venta de la empresa— y un problema jurídico que no se vio venir hace que todo se devuelva al punto de partida.</p>
+
+        <p class="pull">En Turó no dejamos que la piedra ruede de nuevo.</p>
+
+        <p style="color:var(--ink-soft);">No prometemos que el ascenso sea fácil: prometemos que, con nosotros al lado, los riesgos del camino se anticipan y el esfuerzo de construir no se pierde.</p>
+
+        <p style="margin-top:26px; font-family:'Fraunces',serif; font-size:1.1rem;">Existimos para que ningún proyecto empresarial o personal tenga que devolverse a la base de la montaña por un problema jurídico que pudo haberse anticipado.</p>
+      </div>
+
+      <div>
+        <h3 style="font-size:1.2rem; margin-bottom:6px;">Cómo entendemos el derecho</h3>
+        <p style="color:var(--ink-soft); font-size:0.97rem;">Nuestra forma de trabajar consiste en comprender primero el negocio y sus objetivos, para diseñar soluciones jurídicas que generen seguridad, reduzcan riesgos y permitan avanzar con confianza.</p>
+
+        <h3 style="font-size:1.2rem; margin-top:34px; margin-bottom:6px;">Lo que nos diferencia</h3>
+        <ul class="diffs">
+          <li>Comprendemos primero el negocio antes de diseñar la solución jurídica.</li>
+          <li>Integramos el derecho con la realidad operativa de cada empresa.</li>
+          <li>Acompañamos la toma de decisiones, no únicamente el cumplimiento normativo.</li>
+          <li>Ayudamos también a personas a estructurar sus proyectos empresariales o personales.</li>
+          <li>Trabajamos de manera cercana con la alta dirección para anticipar riesgos.</li>
+          <li>Combinamos experiencia corporativa con conocimiento de proyectos industriales, extractivos y de sectores regulados.</li>
+        </ul>
+
+        <h3 style="font-size:1.2rem; margin-top:34px; margin-bottom:6px;">Dónde estamos</h3>
+        <p style="color:var(--ink-soft); font-size:0.97rem;">Estamos ubicados en Medellín y en Bogotá. Prestamos nuestros servicios en todo el territorio nacional, para acompañar a nuestros clientes sin importar en qué región del país se desarrollen sus proyectos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="hairline" style="background:var(--bg-alt);">
+    <div class="wrap">
+      <div class="lead-block">
+        <span class="label">Servicios</span>
+        <h2>En Turó traducimos cada necesidad jurídica de su empresa en una solución que protege la operación y sostiene el crecimiento.</h2>
+      </div>
+
+      <div class="svc">
+        <div class="svc-head">
+          <span class="index">I.</span>
+          <h3>Estructuración Jurídica de Negocios</h3>
+          <span class="tag">Cimientos</span>
+          <p class="desc">Porque muchas empresas necesitan construir antes que defender. Diseñamos las bases jurídicas sobre las que su negocio puede crecer sin sobresaltos.</p>
+        </div>
+        <ul class="svc-list">
+          <li>Constitución y reorganización de empresas</li>
+          <li>Gobierno corporativo</li>
+          <li>Acuerdos entre socios</li>
+          <li>Estructuración societaria</li>
+          <li>Procesos de inversión</li>
+          <li>Fusiones y adquisiciones</li>
+          <li>Due diligence</li>
+        </ul>
+      </div>
+
+      <div class="svc">
+        <div class="svc-head">
+          <span class="index">II.</span>
+          <h3>Contratos y Relaciones Comerciales</h3>
+          <span class="tag">Cuerdas de seguridad</span>
+          <p class="desc">Las relaciones comerciales seguras se construyen antes de la firma. Estructuramos y negociamos los contratos que sostienen la operación diaria de su negocio.</p>
+        </div>
+        <ul class="svc-list">
+          <li>Contratos comerciales</li>
+          <li>Negociaciones</li>
+          <li>Procesos de inversión o levantamiento de capital</li>
+          <li>Joint ventures</li>
+          <li>Acuerdos de confidencialidad (NDA)</li>
+          <li>Contratos de operación</li>
+          <li>Contratos de distribución</li>
+          <li>Contratos de prestación de servicios</li>
+          <li>Plantillas contractuales</li>
+          <li>Recuperación de cartera</li>
+        </ul>
+      </div>
+
+      <div class="svc">
+        <div class="svc-head">
+          <span class="index">III.</span>
+          <h3>Cumplimiento y Gestión del Riesgo</h3>
+          <span class="tag">Anclaje</span>
+          <p class="desc">Crecer con seguridad, no solo con velocidad. Diseñamos los sistemas que le permiten a su empresa cumplir con la normativa vigente y anticipar el riesgo regulatorio antes de que se convierta en una sanción.</p>
+        </div>
+        <ul class="svc-list">
+          <li>Compliance</li>
+          <li>SAGRILAFT</li>
+          <li>Programa de Transparencia y Ética Empresarial (PTEE)</li>
+          <li>Programas corporativos de cumplimiento</li>
+          <li>Gestión de riesgo regulatorio</li>
+          <li>Políticas internas</li>
+          <li>Gobierno corporativo</li>
+        </ul>
+      </div>
+
+      <div class="svc">
+        <div class="svc-head">
+          <span class="index">IV.</span>
+          <h3>Proyectos Empresariales e Industriales</h3>
+          <span class="tag">Rutas de alta montaña</span>
+          <p class="desc">Del papel a la operación. Acompañamos proyectos industriales, productivos y extractivos desde su estructuración jurídica hasta su puesta en marcha.</p>
+        </div>
+        <ul class="svc-list">
+          <li>Derecho minero</li>
+          <li>Derecho ambiental</li>
+          <li>Proyectos forestales (madera y bonos de carbono)</li>
+          <li>Infraestructura</li>
+          <li>Licenciamiento</li>
+          <li>Relacionamiento institucional</li>
+          <li>Gestión predial</li>
+          <li>Servidumbres</li>
+          <li>Relacionamiento comunitario</li>
+          <li>Planes de gestión social</li>
+        </ul>
+      </div>
+
+      <div class="svc">
+        <div class="svc-head">
+          <span class="index">V.</span>
+          <h3>Resolución Estratégica de Conflictos</h3>
+          <span class="tag">Rescate y contingencia</span>
+          <p class="desc">No solamente litigio. Buscamos la salida más estratégica para su empresa, priorizando siempre la solución que menos desgaste genere para el negocio.</p>
+        </div>
+        <ul class="svc-list">
+          <li>Negociaciones</li>
+          <li>Estrategias jurídicas</li>
+          <li>Procesos administrativos</li>
+          <li>Defensa empresarial</li>
+          <li>Conciliaciones</li>
+          <li>Gestión preventiva del conflicto</li>
+          <li>Procesos ejecutivos en la jurisdicción ordinaria</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO TRABAJAMOS -->
+  <section id="como-trabajamos" class="hairline">
+    <div class="wrap">
+      <div class="lead-block">
+        <span class="label">Cómo trabajamos</span>
+        <h2>Una ruta clara, pensada para que usted sepa en todo momento en qué punto del camino está su proyecto.</h2>
+      </div>
+      <div class="trail">
+        <div class="step">
+          <span class="num">1</span>
+          <div>
+            <h3>Reconocimiento del terreno</h3>
+            <p>Estudiamos su operación, su sector y los objetivos reales del proyecto antes de proponer cualquier solución.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">2</span>
+          <div>
+            <h3>Mapa de riesgos del camino</h3>
+            <p>Identificamos los puntos donde su proyecto podría verse expuesto a un riesgo jurídico relevante.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">3</span>
+          <div>
+            <h3>Trazado de la ruta</h3>
+            <p>Le presentamos distintas alternativas jurídicas posibles, con sus costos, tiempos y beneficios.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">4</span>
+          <div>
+            <h3>Anclaje</h3>
+            <p>Formalizamos la estructura, el contrato o el sistema de cumplimiento que sostiene su decisión.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="num">5</span>
+          <div>
+            <h3>Ascenso acompañado</h3>
+            <p>Seguimos a su lado durante la implementación, no solo en la entrega del documento.</p>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:20px; color:var(--ink-soft); max-width:52ch;">No se trata solo de resolver un problema legal puntual: se trata de sostener su ascenso durante todo el camino.</p>
+    </div>
+  </section>
+
+  <!-- SECTORES -->
+  <section id="sectores" class="hairline alt" style="background:var(--bg-alt);">
+    <div class="wrap">
+      <div class="lead-block">
+        <span class="label">Sectores</span>
+        <h2>Trabajamos con empresas de distintos tamaños y sectores, combinando experiencia corporativa transaccional con conocimiento profundo de industrias reguladas y complejas.</h2>
+      </div>
+      <div class="sect-grid">
+        <div class="sect-card">
+          <h3>Industria minera y extractiva</h3>
+          <p>Licenciamiento, relacionamiento institucional y comunitario, gestión predial y servidumbres para proyectos en operación o en estructuración.</p>
+        </div>
+        <div class="sect-card">
+          <h3>Sector forestal y de bonos de carbono</h3>
+          <p>Estructuración jurídica de proyectos forestales y de créditos de carbono, alineada con los estándares ambientales vigentes.</p>
+        </div>
+        <div class="sect-card">
+          <h3>Agroindustria e industria manufacturera</h3>
+          <p>Contratos, cumplimiento y estructuración societaria para empresas productivas en crecimiento.</p>
+        </div>
+        <div class="sect-card">
+          <h3>Startups, plataformas digitales y proptech</h3>
+          <p>Términos y condiciones, estructuración legal de modelos de negocio digitales y acompañamiento en rondas de inversión.</p>
+        </div>
+        <div class="sect-card">
+          <h3>Empresas familiares</h3>
+          <p>Gobierno corporativo, acuerdos entre socios y planeación de relevo generacional.</p>
+        </div>
+        <div class="sect-card">
+          <h3>Infraestructura y proyectos productivos</h3>
+          <p>Estructuración jurídica integral, desde la fase de diseño hasta la puesta en operación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="hairline">
+    <div class="wrap">
+      <div class="lead-block">
+        <span class="label">Preguntas frecuentes</span>
+      </div>
+
+      <details open>
+        <summary>¿Turó Legal solo trabaja con grandes empresas? <span class="plus">+</span></summary>
+        <p>No. Trabajamos con empresas en crecimiento, empresas familiares, emprendedores de alto impacto e inversionistas o personas naturales que estructuran proyectos propios. Lo que buscamos no es el tamaño de la empresa, sino la disposición a construir con prevención.</p>
+      </details>
+      <details>
+        <summary>¿Atienden proyectos fuera de Medellín y Bogotá? <span class="plus">+</span></summary>
+        <p>Sí. Aunque operamos desde Medellín y Bogotá, acompañamos proyectos en distintas regiones de Colombia, especialmente en sectores industriales, mineros y forestales.</p>
+      </details>
+      <details>
+        <summary>¿Cómo es el primer contacto con Turó? <span class="plus">+</span></summary>
+        <p>Iniciamos con una conversación para entender su negocio, su contexto y el reto específico que enfrenta. A partir de ahí, definimos si somos el aliado adecuado y cuál sería la ruta de trabajo.</p>
+      </details>
+      <details>
+        <summary>¿Solo hacen litigio o también previenen conflictos? <span class="plus">+</span></summary>
+        <p>Nuestro enfoque principal es la prevención: estructurar antes de defender. Cuando el conflicto ya existe, priorizamos siempre la salida más estratégica —negociación, conciliación— antes de escalar a un litigio.</p>
+      </details>
+      <details>
+        <summary>¿Trabajan con personas naturales, no solo con empresas? <span class="plus">+</span></summary>
+        <p>Sí. Acompañamos a personas naturales e inversionistas en la estructuración de proyectos empresariales o patrimoniales propios.</p>
+      </details>
+      <details>
+        <summary>¿Qué tipo de cliente no encaja con Turó? <span class="plus">+</span></summary>
+        <p>Somos honestos al respecto: no somos la firma indicada para quien busca la opción más económica sin valorar la prevención, o para quien espera una respuesta genérica sin compartir el contexto real de su operación.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="hairline" style="background:var(--bg-alt);">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="label">Contacto</span>
+        <h2 style="font-size:clamp(1.8rem,2.8vw,2.3rem); margin-top:10px;">Hablemos de su proyecto.</h2>
+        <p style="margin-top:16px; color:var(--ink-soft); max-width:44ch;">Cuéntenos en qué punto del camino está su empresa o su proyecto, y con gusto le compartiremos cómo podemos acompañarlo.</p>
+
+        <div class="people">
+          <div class="person">
+            <div class="avatar">JD</div>
+            <div>
+              <h3>Juan Diego Villa Mesa</h3>
+              <p class="role">Abogado · Politólogo · Negociador</p>
+              <div class="chan">
+                <a href="mailto:diegovilla@turoabogados.com">diegovilla@turoabogados.com</a>
+                <a href="tel:+573117204944">311 720 4944</a>
+                <a href="https://wa.me/573117204944" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+              </div>
+            </div>
+          </div>
+          <div class="person">
+            <div class="avatar">PR</div>
+            <div>
+              <h3>María del Pilar Reyes Manrique</h3>
+              <p class="role">Abogada · Politóloga · Esp. Derecho Comercial</p>
+              <div class="chan">
+                <a href="mailto:pilar.reyes@turoabogados.com">pilar.reyes@turoabogados.com</a>
+                <a href="tel:+573187935662">318 793 56 62</a>
+                <a href="https://wa.me/573187935662" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-panel">
+        <h3>¿Su proyecto necesita asegurar el siguiente paso?</h3>
+        <p>Escríbanos directamente por correo o WhatsApp y le responderemos en el menor tiempo posible.</p>
+        <a class="btn btn-primary" href="mailto:diegovilla@turoabogados.com,pilar.reyes@turoabogados.com?subject=Quiero%20hablar%20sobre%20un%20proyecto">Escribir un correo</a>
+        <div class="loc">
+          <div>
+            <span class="label">Medellín</span>
+            Antioquia, Colombia
+          </div>
+          <div>
+            <span class="label">Bogotá</span>
+            Cundinamarca, Colombia
+          </div>
+          <div>
+            <span class="label">Cobertura</span>
+            Todo el territorio nacional
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#inicio">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <polygon points="50,14 86,80 14,80" fill="none" stroke="#8b96a6" stroke-width="6" stroke-linejoin="round"/>
+        <polygon points="50,14 86,80 62,80 62,58" fill="none" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+      </svg>
+      <span><b>Turó</b> <i>Legal</i></span>
+    </a>
+    <div class="fcols">
+      <div class="fcol">
+        <h4>Firma</h4>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#como-trabajamos">Cómo trabajamos</a>
+        <a href="#sectores">Sectores</a>
+      </div>
+      <div class="fcol">
+        <h4>Contacto</h4>
+        <a href="mailto:diegovilla@turoabogados.com">diegovilla@turoabogados.com</a>
+        <a href="mailto:pilar.reyes@turoabogados.com">pilar.reyes@turoabogados.com</a>
+        <a href="#contacto">Medellín · Bogotá</a>
+      </div>
+    </div>
+  </div>
+  <div class="fbottom wrap" style="margin-top:44px;">
+    © <span id="year"></span> Turó Legal. Todos los derechos reservados.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
